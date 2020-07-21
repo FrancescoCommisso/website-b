@@ -1,22 +1,45 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
+import t from "./assets/t-hat.png"
+import "./style.css"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+const IndexPage = () => {
+  return (
+    <div
+      style={{
+        display: "flex",
+        height: "100vh",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        <h1 style={{ color: "purple", zIndex: 100, textAlign: "center" }}>
+          Happy Birthday Boo
+        </h1>
+        <img className="rotate" src={t}></img>
+        <Link
+          style={{
+            backgroundColor: "purple",
+            color: "white",
+            borderRadius: "30px",
+            textAlign: "center",
+            padding: "20px",
+            textDecoration: "none",
+            zIndex: 100,
+          }}
+          to="/reasons"
+        >
+          Click for some birthday sweeteness
+        </Link>
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+  )
+}
 
 export default IndexPage
